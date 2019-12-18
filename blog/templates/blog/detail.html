@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Kosuke Kihara</title>
+    <title>{{ blog.title}}</title>
     
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
     
@@ -60,37 +60,16 @@
     </header>
     
     <main role="main">
-        
-        <section class="jumbotron text-center">
+        <div class="container">
             <div class="container">
-                <h1>Hi, I'm Kosuke.</h1>
-                <p class="lead text-muted">Hey, my name is Kosuke Kihara and I love to make Django websites. It's the thrill of handling the requests that the people want!</p>
-                <p>
-                    <a href="mailto:kosuke.kihara0624@gmail.com" class="btn btn-primary my-2">Email Me</a>
-                </p>
-                <img src="{% static 'me.jpeg' %}" height="300"/>
-            </div>
-        </section>
-        
-        <div class="album py-5 bg-light">
-            <div class="container">
-                
-                <div class="row">
-
-                    {% for job in jobs.all %}
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <image class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></image>
-                            <div class="card-body">
-                                <p class="card-text">{{ job.summary }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+                <h1 class="text-center pt-3">{{ blog.title }}</h1>
+                <p class="text-center">{{ blog.pub_date }}</p>
+                <image class="img-fluid" src="{{ blog.image.url }}" />
+                <br />
+                <br />
+                <p>{{ blog.body }}</p>
             </div>
         </div>
-        
     </main>
     
     <footer class="text-muted">
@@ -103,4 +82,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </html>
 </body>
-    
